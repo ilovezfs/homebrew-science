@@ -87,7 +87,7 @@ class Dealii < Formula
     args << "-DMETIS_DIR=#{Formula["metis"].opt_prefix}" if build.with? "metis"
     args << "-DMUPARSER_DIR=#{Formula["muparser"].opt_prefix}" if build.with? "muparser"
     args << "-DNETCDF_DIR=#{Formula["netcdf"].opt_prefix}" if build.with? "netcdf"
-    args << "-DOPENCASCADE_INCLUDE_DIR=#{Formula["oce"].opt_include}/oce" if build.with? "oce"
+    args << "-DOPENCASCADE_DIR=#{Formula["oce"].opt_prefix}" if build.with? "oce"
     args << "-DP4EST_DIR=#{Formula["p4est"].opt_prefix}" if build.with? "p4est"
     args << "-DPETSC_DIR=#{Formula["petsc"].opt_prefix}" if build.with? "petsc"
     args << "-DSLEPC_DIR=#{Formula["slepc"].opt_prefix}" if build.with? "slepc"
