@@ -3,6 +3,7 @@ class Garli < Formula
   # tag "bioinformatics"
   url "https://garli.googlecode.com/files/garli-2.01.tar.gz"
   sha256 "e7fd4c115f9112fd9a019dcb6314e3a9d989f56daa0f833a28dc8249e50988ef"
+  revision 1
 
   depends_on :mpi => :recommended
   depends_on "ncl"
