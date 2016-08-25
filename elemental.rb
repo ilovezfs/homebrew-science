@@ -1,5 +1,6 @@
 class Elemental < Formula
   homepage "http://libelemental.org/"
+  revision 1
 
   stable do
     url "https://github.com/elemental/Elemental/archive/0.85.tar.gz"
