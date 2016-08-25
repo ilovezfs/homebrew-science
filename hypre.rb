@@ -3,8 +3,9 @@ class Hypre < Formula
   homepage "http://computation.llnl.gov/casc/hypre/software.html"
   url "http://ftp.mcs.anl.gov/pub/petsc/externalpackages/hypre-2.10.0b-p2.tar.gz"
   mirror "ftp://ftp.mirrorservice.org/sites/distfiles.gentoo.org/distfiles/hypre-2.10.0b-p2.tar.gz"
-  sha256 "76414e693e5381e352e759c851c8cd5969dba7001b1dc153fe0f1ff60a5bb168"
   version "2.10.0b-p2"
+  sha256 "76414e693e5381e352e759c851c8cd5969dba7001b1dc153fe0f1ff60a5bb168"
+  revision 1
 
   bottle do
     cellar :any_skip_relocation
