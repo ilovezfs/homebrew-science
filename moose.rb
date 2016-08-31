@@ -4,6 +4,7 @@ class Moose < Formula
   url "https://github.com/BhallaLab/moose-core/archive/ghevar_3.0.2-beta.3.tar.gz"
   version "3.0.2"
   sha256 "ad8e7b50874b35190aa5cfdbf0bccaacba241ff19f4d12708f115816cc391b35"
+  revision 1
 
   bottle do
     cellar :any
