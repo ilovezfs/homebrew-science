@@ -1,10 +1,9 @@
 class RstudioServer < Formula
   desc "Integrated development environment (IDE) for R"
   homepage "http://www.rstudio.com"
-  url "https://github.com/rstudio/rstudio/archive/v0.99.902.tar.gz"
-  sha256 "703a3ebedbb4bb44d2cacffed2615b4f65156fcd4115029931eb5fd99950c689"
+  url "https://github.com/rstudio/rstudio/archive/v1.0.1.tar.gz"
+  sha256 "f4da44ff50f838f4626a6168316ecb2cc6cc7ca89bd2dd58d7d4f34d97627d62"
   head "https://github.com/rstudio/rstudio.git"
-  revision 1
 
   bottle do
     cellar :any
