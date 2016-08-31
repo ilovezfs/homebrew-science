@@ -4,8 +4,8 @@ class Corset < Formula
   # doi "10.1186/s13059-014-0410-6"
   # tag "bioinformatics"
 
-  url "https://github.com/Oshlack/Corset/archive/version-1.05.tar.gz"
-  sha256 "a4902035ad58e9a5896fe1951de83c3d6b64759919589ecc27cf714c6acfc487"
+  url "https://github.com/Oshlack/Corset/archive/version-1.06.tar.gz"
+  sha256 "99efe5357c02cce0f9db2f11959a35644b6389aa263f75785fd13969140e5295"
 
   bottle do
     cellar :any_skip_relocation
