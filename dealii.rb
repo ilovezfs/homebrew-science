@@ -41,15 +41,9 @@ class Dealii < Formula
   depends_on "trilinos"     => [:recommended] + openblasdep
 
   needs :cxx11
+
   def install
     ENV.cxx11
-
-    # PETSc 3.7.x added a parameter to PetscOptionsSetValue()
-    # https://bitbucket.org/petsc/petsc/src/5d547b27bccc01eacb9fc0eef6ae71e85dce2b0c/src/sys/objects/options.c?at=master&fileviewer=file-view-default#options.c-1078
-    # See upstream PR: https://github.com/dealii/dealii/pull/2327
-    inreplace "source/lac/petsc_precondition.cc",
-      "PetscOptionsSetValue(\"",
-      "PetscOptionsSetValue(NULL,\""
 
     args = %W[
       -DCMAKE_BUILD_TYPE=DebugRelease
