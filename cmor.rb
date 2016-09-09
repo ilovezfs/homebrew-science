@@ -1,7 +1,7 @@
 class Cmor < Formula
   homepage "http://www2-pcmdi.llnl.gov/cmor"
-  url "https://github.com/PCMDI/cmor/archive/CMOR-2.9.2.tar.gz"
-  sha256 "8a9e8d4d64545d9e88bbbd19d52dea8d114f5dc3891ccdeb00e007938b68d411"
+  url "https://github.com/PCMDI/cmor/archive/3.1.2.tar.gz"
+  sha256 "ee58b6d405f081e4e0633af931b7992f1a570953b71ece17c01ab9e15889211a"
 
   depends_on "ossp-uuid"
   depends_on "udunits"
