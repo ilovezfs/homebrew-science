@@ -1,7 +1,9 @@
 class Openmeeg < Formula
-  homepage "http://www-sop.inria.fr/athena/software/OpenMEEG/"
+  desc "Solves forward problems in the field of EEG and MEG"
+  homepage "https://openmeeg.github.io/"
   url "https://github.com/openmeeg/openmeeg/archive/release-2.1.tar.gz"
   sha256 "fa424c59a4366d6331c76e539cf5df21bf5e0b065972b2bdda20cdb9f29aba6a"
+  revision 1
 
   head "https://github.com/openmeeg/openmeeg.git"
 
