@@ -3,10 +3,9 @@ class Blasr < Formula
   homepage "https://github.com/PacificBiosciences/blasr"
   # doi "10.1186/1471-2105-13-238"
   # tag "bioinformatics"
-
-  url "https://github.com/PacificBiosciences/blasr/archive/smrtanalysis-2.2.tar.gz"
-  sha256 "bef789accf2662aed409b31227e029c61582d5dfe6a289043db4c1b27fd7ab12"
-
+  url "https://github.com/PacificBiosciences/blasr.git",
+      :tag => "smrtanalysis-4.0.0",
+      :revision => "8d086d747e51a409f25481524e92e99750b14d59"
   head "https://github.com/PacificBiosciences/blasr.git"
 
   bottle do
@@ -17,35 +16,31 @@ class Blasr < Formula
 
   depends_on "hdf5"
 
-  # https://github.com/PacificBiosciences/blasr/issues/28
-  fails_with :clang do
-    build 602
-    cause <<-EOS.undent
-      error: destructor type 'HDFWriteBuffer<int>' in object
-      destruction expression does not match the type
-      'BufferedHDFArray<int>' of the object being destroyed
-    EOS
-  end
-
-  fails_with :gcc do
-    build 5666
-    cause <<-EOS.undent
-      error: invalid conversion
-      from 'void (*)(H5::H5Object&, std::string, void*)'
-      to 'void (*)(H5::H5Location&, std::string, void*)'
-    EOS
-  end
-
   def install
-    hdf5 = Formula["hdf5"]
-    system "make", "STATIC=",
-      "HDF5INCLUDEDIR=#{hdf5.opt_include}",
-      "HDF5LIBDIR=#{hdf5.opt_lib}"
-
-    # Fix the error: install: mkdir /usr/local/Cellar/blasr/2.2/bin: exists
-    ENV.deparallelize
-
-    system "make", "install", "PREFIX=#{prefix}"
+    inreplace ["libcpp/alignment/MappingMetrics.cpp",
+               "libcpp/alignment/MappingMetrics.hpp"] do |s|
+      if MacOS.version >= :sierra
+        s.gsub! "#ifdef __APPLE__", "#ifdef __OPPLE__"
+      else
+        s.gsub! "CLOCK_", "MYCLOCK_"
+        s.gsub! "clockid_t", "myclockid_t"
+      end
+    end
+    system "./configure.py", "--sub",
+                             "--no-pbbam",
+                             "--shared",
+                             "HDF5_INCLUDE=#{Formula["hdf5"].opt_include}",
+                             "HDF5_LIB=#{Formula["hdf5"].opt_lib}"
+    system "make", "configure-submodule"
+    system "make", "build-submodule"
+    system "make"
+    %w[libcpp/alignment/libblasr.dylib libcpp/pbdata/libpbdata.dylib
+       libcpp/hdf/libpbihdf.dylib].each do |f|
+      lib_name = Pathname.new(f).basename.to_s
+      MachO::Tools.change_install_name("blasr", lib_name, "#{lib}/#{lib_name}")
+      lib.install f
+    end
+    bin.install "blasr"
   end
 
   test do
