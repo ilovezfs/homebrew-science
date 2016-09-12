@@ -30,9 +30,7 @@ class Nexusformat < Formula
     cmake_args << "-DENABLE_HDF4=TRUE" if build.with? "hdf4"
     system "cmake", ".", *cmake_args
     system "make"
-    # test failures have been reported upstream
-    # https://github.com/nexusformat/code/issues/426
-    # system "make", "test"
+    system "make", "test"
     system "make", "install"
   end
 
