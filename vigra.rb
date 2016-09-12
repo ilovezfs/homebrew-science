@@ -3,15 +3,15 @@ class Vigra < Formula
   homepage "https://ukoethe.github.io/vigra/"
   url "https://github.com/ukoethe/vigra/releases/download/Version-1-10-0/vigra-1.10.0-src-with-docu.tar.gz"
   sha256 "42d4a361b0bb52fbfdae7e76000698be04dabba77be3f4248d369139fe96a099"
+  revision 2
+
+  head "https://github.com/ukoethe/vigra.git"
+
   bottle do
     cellar :any
     sha256 "f3dcc0036a4465781fc8a17c6f36ac05fac4f7962e0701d07cb34352501baa00" => :el_capitan
     sha256 "c47771148d5ff67828e4cd2a228f3d3d9381bc99e44ced6b4c7a3bcb0fe00f2d" => :yosemite
   end
-
-  revision 2
-
-  head "https://github.com/ukoethe/vigra.git"
 
   option :cxx11
   option "without-test", "skip tests"
@@ -38,9 +38,13 @@ class Vigra < Formula
     end
   end
 
+  fails_with :clang if MacOS.version <= :mavericks
+
   def install
-    ENV.cxx11 if build.cxx11?
-    ENV.append "CXXFLAGS", "-ftemplate-depth=512" if build.cxx11?
+    if build.cxx11?
+      ENV.cxx11
+      ENV.append "CXXFLAGS", "-ftemplate-depth=512"
+    end
     cmake_args = std_cmake_args
     cmake_args << "-DWITH_VIGRANUMPY=0" if build.without? :python
     cmake_args << "-DWITH_HDF5=0" if build.without? "hdf5"
