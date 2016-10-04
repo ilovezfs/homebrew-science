@@ -13,8 +13,9 @@ class Gingr < Formula
   # doi "10.1186/s13059-014-0524-x"
 
   if OS.mac?
-    url "https://github.com/marbl/gingr/releases/download/v1.2/gingr-OSX64-v1.2.zip"
-    sha256 "27ba08606ae3f743ffdbcb6d554048ab3a7560087577f10503a0f5cd0227f9d3"
+    url "https://github.com/marbl/gingr/releases/download/v1.3/gingr-OSX64-v1.3.app.zip"
+    version "1.3"
+    sha256 "2a7dd9307ce7dc69d68648c469f6d6fba2e411161332043af9477b08cb2406c6"
   elsif OS.linux?
     url "https://github.com/marbl/gingr/releases/download/v1.2/gingr-Linux64-v1.2.tar.gz"
     sha256 "21ffb3c6fe0b70b8a872c638325e8b4d1ad18514f9888c1c1ac9e81c09d90503"
