@@ -1,11 +1,10 @@
 class GraphTool < Formula
   desc "efficient network analysis"
   homepage "http://graph-tool.skewed.de/"
-  revision 4
 
   stable do
-    url "https://downloads.skewed.de/graph-tool/graph-tool-2.18.tar.bz2"
-    sha256 "3c4929fb7b6bae13a12115afdf8c07d6531aeeba548305376ba7b0ac710ec4d4"
+    url "https://downloads.skewed.de/graph-tool/graph-tool-2.19.tar.bz2"
+    sha256 "eba1090f94b0434890beedaf0c100dd0fc77e41ebfe29b4725d76cadb82099af"
 
     # Fix compilation problem with newer CGAL
     # Remove at next release
