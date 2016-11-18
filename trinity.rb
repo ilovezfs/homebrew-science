@@ -1,11 +1,21 @@
 class Trinity < Formula
   desc "RNA-Seq de novo assembler"
   homepage "https://trinityrnaseq.github.io"
-  url "https://github.com/trinityrnaseq/trinityrnaseq/archive/v2.2.0.tar.gz"
-  sha256 "f34603e56ac76a81447dd230b31248d5890ecffee8ef264104d4f1fa7fe46c9e"
   revision 1
 
-  head "https://github.com/trinityrnaseq/trinityrnaseq.git"
+  stable do
+    url "https://github.com/trinityrnaseq/trinityrnaseq/archive/v2.2.0.tar.gz"
+    sha256 "f34603e56ac76a81447dd230b31248d5890ecffee8ef264104d4f1fa7fe46c9e"
+
+    depends_on "bowtie"
+
+    # Teach Chrysalis's Makefile that GCC 6 exists otherwise it can't find headers
+    # Reported 26 Jun 2016: https://github.com/trinityrnaseq/trinityrnaseq/pull/154
+    patch do
+      url "https://github.com/trinityrnaseq/trinityrnaseq/pull/154.patch"
+      sha256 "8166ffebdff65ec344eda08f9104f3303616b02b2db677f0a34774ab2d022850"
+    end
+  end
 
   # doi "10.1038/nbt.1883"
   # tag "bioinformatics"
@@ -18,11 +28,24 @@ class Trinity < Formula
     sha256 "ab62075292fa00b265ef44554ad015344cc8137a3859c661860c044bb57c699d" => :x86_64_linux
   end
 
+  devel do
+    url "https://github.com/trinityrnaseq/trinityrnaseq/archive/Trinity-v2.3.1_PRERELEASE.tar.gz"
+    version "2.3.1-beta"
+    sha256 "115cf23172e607577d878a0f0a16f23883ac95e55b891c7ddfedad9a3ace6802"
+
+    depends_on "bowtie2"
+  end
+
+  head do
+    url "https://github.com/trinityrnaseq/trinityrnaseq.git"
+
+    depends_on "bowtie2"
+  end
+
   depends_on "express" => :recommended
-  depends_on "bowtie" => :run
-  depends_on "jellyfish" => :run
-  depends_on "trimmomatic" => :run
-  depends_on "samtools" => :run
+  depends_on "jellyfish"
+  depends_on "trimmomatic"
+  depends_on "samtools"
   depends_on "htslib"
   depends_on "gcc"
 
@@ -32,13 +55,6 @@ class Trinity < Formula
 
   fails_with :llvm do
     cause 'error: unrecognized command line option "-std=c++0x"'
-  end
-
-  # Teach Chrysalis's Makefile that GCC 6 exists otherwise it can't find headers
-  # Reported 26 Jun 2016: https://github.com/trinityrnaseq/trinityrnaseq/pull/154
-  patch do
-    url "https://github.com/trinityrnaseq/trinityrnaseq/pull/154.patch"
-    sha256 "8166ffebdff65ec344eda08f9104f3303616b02b2db677f0a34774ab2d022850"
   end
 
   def install
@@ -65,8 +81,17 @@ class Trinity < Formula
     end
 
     inreplace "util/support_scripts/trinity_install_tests.sh" do |s|
-      s.gsub! "trinity-plugins/jellyfish/jellyfish", Formula["jellyfish"].prefix
-      s.gsub! "trinity-plugins/BIN/samtools", Formula["samtools"].prefix
+      s.gsub! "trinity-plugins/jellyfish/jellyfish", Formula["jellyfish"].opt_prefix
+      s.gsub! "trinity-plugins/BIN/samtools", Formula["samtools"].opt_prefix
+    end
+
+    unless build.stable?
+      inreplace "galaxy-plugin/old/GauravGalaxy/Trinity", "$ROOTDIR/trinity-plugins/jellyfish", Formula["jellyfish"].opt_prefix
+      inreplace "galaxy-plugin/old/Trinity", "$ROOTDIR/trinity-plugins/jellyfish", Formula["jellyfish"].opt_prefix
+      inreplace "trinity-plugins/collectl/Tests.py", "/N/dc2/scratch/befulton/TrinityMason/trinityrnaseq_r20140717/trinity-plugins/jellyfish/bin/jellyfish", Formula["jellyfish"].opt_prefix
+      inreplace "util/insilico_read_normalization.pl", "$ROOTDIR/trinity-plugins/jellyfish", Formula["jellyfish"].opt_prefix
+      inreplace "util/misc/run_jellyfish.pl", '$JELLYFISH_DIR = $FindBin::RealBin . "/../../trinity-plugins/jellyfish-1.1.3";',
+                                              "$JELLYFISH_DIR = \"#{Formula["jellyfish"].opt_prefix}\";"
     end
 
     system "make", "all"
