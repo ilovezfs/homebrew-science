@@ -1,11 +1,10 @@
 class Elemental < Formula
   desc "Distributed-memory dense & sparse linear algebra library"
   homepage "http://libelemental.org/"
-  revision 1
 
   stable do
-    url "https://github.com/elemental/Elemental/archive/0.85.tar.gz"
-    sha256 "ccf2b8d3b92e99fb0f248b2c82222bef15a7644d7dc3a2826935216b0bd82d9d"
+    url "https://github.com/elemental/Elemental/archive/v0.87.tar.gz"
+    sha256 "6ef29dbdf4b017fac4c4937858f2e5a5496c66f3b5ca81c5cfbf77a199312210"
   end
 
   bottle do
