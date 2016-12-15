@@ -2,9 +2,8 @@ class Cmdstan < Formula
   desc "Probabilistic programming for Bayesian inference"
   homepage "http://mc-stan.org/"
   # tag "math"
-  url "https://github.com/stan-dev/cmdstan/releases/download/v2.12.0/cmdstan-2.12.0.tar.gz"
-  sha256 "717fbc25fbf10db6e6315f4cdd74f38d32afaf153bbdade259bf838deb6af774"
-  revision 1
+  url "https://github.com/stan-dev/cmdstan/releases/download/v2.13.1/cmdstan-2.13.1.tar.gz"
+  sha256 "1566cdafbaaaa9a18e3de0d30e3dbc37a5f41d6baad815a78cdac6607e4df656"
 
   bottle do
     cellar :any_skip_relocation
