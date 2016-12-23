@@ -1,8 +1,8 @@
 class AstrometryNet < Formula
   desc "Automatic identification of astronomical images"
   homepage "http://astrometry.net"
-  url "http://astrometry.net/downloads/astrometry.net-0.69.tar.gz"
-  sha256 "6a445acfd4ff3c082eb56fcba22ee626b45a98665633710a6b1d4a3edef36f3f"
+  url "http://astrometry.net/downloads/astrometry.net-0.70.tar.gz"
+  sha256 "e087b26b3f3821e63ba3c4d1f6a5cc342784c5ab938c05d59b75ba91b2866b6a"
   head "https://github.com/dstndstn/astrometry.net.git"
 
   bottle do
