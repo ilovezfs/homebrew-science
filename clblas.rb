@@ -1,8 +1,8 @@
 class Clblas < Formula
   desc "Library containing BLAS functions written in OpenCL"
   homepage "https://github.com/clMathLibraries/clBLAS"
-  url "https://github.com/clMathLibraries/clBLAS/archive/v2.6.tar.gz"
-  sha256 "4607561a648949709bc7c368be4aaf7346174406e678454b643e31cfe861830c"
+  url "https://github.com/clMathLibraries/clBLAS/archive/v2.12.tar.gz"
+  sha256 "7269c7cb06a43c5e96772010eba032e6d54e72a3abff41f16d765a5e524297a9"
 
   bottle do
     cellar :any
