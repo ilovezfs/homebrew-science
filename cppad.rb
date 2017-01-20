@@ -1,11 +1,9 @@
 class Cppad < Formula
   desc "Differentiation of C++ Algorithms"
   homepage "http://www.coin-or.org/CppAD"
-  url "http://www.coin-or.org/download/source/CppAD/cppad-20150000.2.epl.tgz"
-  version "20150000"
-  sha256 "972498b307aff88173c4616e8e57bd2d1360d929a5faf49e3611910a182376f7"
-  revision 2
-
+  url "https://www.coin-or.org/download/source/CppAD/cppad-20170119.epl.tgz"
+  version "20170119"
+  sha256 "69d842453249d14969838529a65b5a63a674faa5352388e2cce90be3354d518b"
   head "https://github.com/coin-or/CppAD.git"
 
   bottle do
