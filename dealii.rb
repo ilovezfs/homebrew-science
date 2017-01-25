@@ -118,7 +118,7 @@ class Dealii < Formula
         system "cmake", "."
         system "make", "release"
         if build.with? "mpi"
-          system "mpirun", "-np", Hardware::CPU.cores, "step-40"
+          system "mpirun", "-np", "2", "step-40"
         else
           system "make", "run"
         end
@@ -126,7 +126,7 @@ class Dealii < Formula
         inreplace "step-40.cc", "#  define USE_PETSC_LA", "//#  define USE_PETSC_LA"
         system "make", "release"
         if build.with? "mpi"
-          system "mpirun", "-np", Hardware::CPU.cores, "step-40"
+          system "mpirun", "-np", "2", "step-40"
         else
           system "make", "run"
         end
