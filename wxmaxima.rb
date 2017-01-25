@@ -1,8 +1,8 @@
 class Wxmaxima < Formula
   desc "Cross platform GUI for Maxima"
   homepage "https://andrejv.github.io/wxmaxima"
-  url "https://downloads.sourceforge.net/project/wxmaxima/wxMaxima/16.12.0/wxmaxima-16.12.0.tar.gz"
-  sha256 "30d4fcf2b33349fb60d13f7efcd0d9b5460915fa7065665a2c7c291c77d26a06"
+  url "https://downloads.sourceforge.net/project/wxmaxima/wxMaxima/16.12.1/wxmaxima-16.12.1.tar.gz"
+  sha256 "e13d4c28f7b4dd26fb29d0b9a1697622c5aa627d17cf4cc9c598d19af8acb09e"
 
   bottle do
     cellar :any
