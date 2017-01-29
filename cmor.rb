@@ -3,6 +3,7 @@ class Cmor < Formula
   homepage "http://www2-pcmdi.llnl.gov/cmor"
   url "https://github.com/PCMDI/cmor/archive/3.2.1.tar.gz"
   sha256 "4838a695be1830a10f7e01bb1b4142fd151f28e0e417d4470aa49b821e3b31a8"
+  revision 1
   # doi "10.5281/zenodo.61943"
 
   bottle do
