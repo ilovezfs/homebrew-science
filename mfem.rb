@@ -4,6 +4,7 @@ class Mfem < Formula
   url "http://goo.gl/Y9T75B"
   version "3.2"
   sha256 "2938c3deed4ec4f7fd5b5f5cfe656845282e86e2dcd477d292390058b7b94340"
+  revision 1
 
   bottle do
     cellar :any_skip_relocation
