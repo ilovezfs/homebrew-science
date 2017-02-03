@@ -3,6 +3,7 @@ class Abinit < Formula
   homepage "http://www.abinit.org"
   url "http://ftp.abinit.org/abinit-8.0.8b.tar.gz"
   sha256 "37ad5f0f215d2a36e596383cb6e54de3313842a0390ce8d6b48a423d3ee25af2"
+  revision 1
   # tag "chemistry"
   # doi "10.1016/j.cpc.2009.07.007"
 
@@ -14,6 +15,7 @@ class Abinit < Formula
     sha256 "8fb1203894219af9b9a317feeeeeab7afc6202fb7f19fd17cb0eca23ca8b9930" => :yosemite
   end
 
+  option "without-libxc", "Don't enable libxc support"
   option "with-openmp", "Enable OpenMP multithreading"
   option "without-test", "Skip build-time tests (not recommended)"
   option "with-testsuite", "Run full test suite (time consuming)"
@@ -25,14 +27,32 @@ class Abinit < Formula
   depends_on "veclibfort"
   depends_on "scalapack" => :recommended
   depends_on "fftw" => ["with-mpi", "with-fortran", :recommended]
-  depends_on "libxc" => :recommended
   depends_on "netcdf" => ["with-fortran", :recommended]
   depends_on "etsf_io" => :recommended
   depends_on "gsl" => :recommended
 
   needs :openmp if build.with? "openmp"
 
+  resource "libxc-2.2" do
+    url "http://www.tddft.org/programs/octopus/down.php?file=libxc/libxc-2.2.3.tar.gz"
+    sha256 "2f2b00b77a75c7fe8fe3f3ae70700cf28a09ff8d0ce791e47980ff7f9cde68e7"
+  end
+
   def install
+    if build.with? "libxc"
+      resource("libxc-2.2").stage do
+        system "./configure", "--prefix=#{libexec}/libxc",
+                              "--enable-shared",
+                              "--disable-static",
+                              "FCCPP=#{ENV.fc} -E -x c",
+                              "CC=#{ENV.cc}",
+                              "CFLAGS=-pipe"
+        system "make"
+        system "make", "check"
+        system "make", "install"
+      end
+    end
+
     # Environment variables CC, CXX, etc. will be ignored.
     ENV.delete "CC"
     ENV.delete "CXX"
@@ -83,8 +103,8 @@ class Abinit < Formula
 
     if build.with? "libxc"
       dft_flavor = "libxc"
-      args << "--with-libxc-incs=-I#{Formula["libxc"].opt_include}"
-      args << "--with-libxc-libs=-L#{Formula["libxc"].opt_lib} -lxc -lxcf90"
+      args << "--with-libxc-incs=-I#{libexec}/libxc/include"
+      args << "--with-libxc-libs=-L#{libexec}/libxc/lib -lxc -lxcf90"
     end
 
     # need to link against single precision as well, see https://trac.macports.org/ticket/45617 and http://forum.abinit.org/viewtopic.php?f=3&t=2631
