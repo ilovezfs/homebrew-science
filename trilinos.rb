@@ -52,7 +52,7 @@ class Trilinos < Formula
   depends_on "libmatio"     => [:recommended] + ((build.with? "hdf5") ? ["with-hdf5"] : [])
   depends_on "metis"        => :recommended
   depends_on "mumps"        => [:recommended] + openblasdep
-  depends_on "netcdf"       => ["with-fortran", :optional]
+  depends_on "netcdf"       => :optional
   depends_on "parmetis"     => :recommended if build.with? "mpi"
   depends_on "scalapack"    => [:recommended] + openblasdep
   depends_on "scotch"       => :recommended
