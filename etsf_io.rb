@@ -2,7 +2,7 @@ class EtsfIo < Formula
   homepage "http://www.etsf.eu/resources/software/libraries_and_tools"
   url "http://www.etsf.eu/system/files/etsf_io-1.0.4.tar.gz"
   sha256 "3140c2cde17f578a0e6b63acb27a5f6e9352257a1371a17b9c15c3d0ef078fa4"
-  revision 3
+  revision 4
 
   bottle do
     sha256 "8c1b67b178286f5e780c07f170593a6036dddf1733771a4ce72d94c437c123ef" => :el_capitan
@@ -13,7 +13,7 @@ class EtsfIo < Formula
   option "without-check", "Skip build-time tests (not recommended)"
 
   depends_on :fortran
-  depends_on "netcdf" => ["with-fortran"]
+  depends_on "netcdf"
 
   def install
     system "./configure", "--prefix=#{prefix}", "--with-moduledir=#{include}",
