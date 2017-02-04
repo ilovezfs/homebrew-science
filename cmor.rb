@@ -3,7 +3,7 @@ class Cmor < Formula
   homepage "http://cmor.llnl.gov/"
   url "https://github.com/PCMDI/cmor/archive/3.2.1.tar.gz"
   sha256 "4838a695be1830a10f7e01bb1b4142fd151f28e0e417d4470aa49b821e3b31a8"
-  revision 1
+  revision 2
   # doi "10.5281/zenodo.61943"
 
   bottle do
@@ -16,7 +16,7 @@ class Cmor < Formula
 
   depends_on "ossp-uuid"
   depends_on "udunits"
-  depends_on "netcdf" => "with-fortran"
+  depends_on "netcdf"
   depends_on :fortran
 
   def install
