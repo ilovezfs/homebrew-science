@@ -16,7 +16,7 @@ class Petsc < Formula
   homepage "http://www.mcs.anl.gov/petsc/index.html"
   url "http://ftp.mcs.anl.gov/pub/petsc/release-snapshots/petsc-lite-3.7.4.tar.gz"
   sha256 "92aab64b7fd9c8491eefffd4ccebe5c8a0ba90a464e766db453e8fe96fd332e9"
-  revision 3
+  revision 4
   head "https://bitbucket.org/petsc/petsc", :using => :git
 
   bottle do
@@ -53,7 +53,7 @@ class Petsc < Formula
   depends_on "hdf5"         => ["with-mpi", :recommended]
   depends_on "hwloc"        => :recommended
   depends_on "suite-sparse" => [:recommended] + openblasdep
-  depends_on "netcdf"       => ["with-fortran", :recommended]
+  depends_on "netcdf"       => :recommended
   depends_on "fftw"         => ["with-mpi", "with-fortran", :recommended]
 
   depends_on SundialsNoConflictRequirement if build.with? "sundials"
