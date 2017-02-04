@@ -15,12 +15,6 @@ class Freec < Formula
     sha256 "661683a53de278c90947606c7ebbc4382e3a75a4f19ff4d3cd1fde2a771bfdd1" => :x86_64_linux
   end
 
-  # Patch to fix builds on macOS. Will be present in next release (>10.3)
-  patch do
-    url "https://github.com/BoevaLab/FREEC/commit/b39300fda339bc4fd9b68727e04f99cdbcbe79b2.diff"
-    sha256 "f1ad24896f7d8b60863e7450179334287f12f9fc8ca28e474c01716925f898ca"
-  end
-
   def install
     cd "src" do
       system "make"
