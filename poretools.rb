@@ -19,7 +19,11 @@ class Poretools < Formula
 
   depends_on "pkg-config" => :build # for h5py
   depends_on "freetype" # for matplotlib
-  depends_on "hdf5"
+  if OS.linux?
+    depends_on "hdf5@1.8"
+  else
+    depends_on "hdf5"
+  end
   depends_on :fortran # for scipy
   depends_on :python if MacOS.version <= :snow_leopard
 
