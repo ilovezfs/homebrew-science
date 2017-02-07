@@ -21,7 +21,7 @@ class Poretools < Formula
   depends_on "freetype" # for matplotlib
   depends_on "hdf5"
   depends_on :fortran # for scipy
-  depends_on :python if MacOS.version <= :snow_leopard
+  depends_on :python if MacOS.version <= :snow_leopard || OS.linux?
 
   cxxstdlib_check :skip
 
