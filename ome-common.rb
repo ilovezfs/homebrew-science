@@ -1,8 +1,8 @@
 class OmeCommon < Formula
   desc "Open Microscopy Environment (OME) common functionality"
   homepage "https://www.openmicroscopy.org/site/products/ome-files-cpp/"
-  url "https://downloads.openmicroscopy.org/ome-common-cpp/5.3.2/source/ome-common-cpp-5.3.2.tar.xz"
-  sha256 "12dc65ddf6813e272412fcf65da58a3a56eb41873da6113f93ada57bd7402fbf"
+  url "https://downloads.openmicroscopy.org/ome-common-cpp/5.4.0/source/ome-common-cpp-5.4.0.tar.xz"
+  sha256 "333cb2d3237c137e13899d84062c7eb96316e0527c9e889ce99df88694afa665"
   head "https://github.com/ome/ome-common-cpp.git", :branch => "develop", :shallow => false
 
   bottle do
