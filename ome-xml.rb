@@ -3,6 +3,7 @@ class OmeXml < Formula
   homepage "https://www.openmicroscopy.org/site/products/ome-files-cpp/"
   url "http://downloads.openmicroscopy.org/bio-formats/5.2.4/artifacts/bioformats-dfsg-5.2.4.tar.xz"
   sha256 "4e50c4a6936514d1085f05bdbdd009966b61428a97415bf6a4d4d27667b7ff15"
+  revision 1
   head "https://github.com/openmicroscopy/bioformats.git", :branch => "develop", :shallow => false
 
   bottle do
