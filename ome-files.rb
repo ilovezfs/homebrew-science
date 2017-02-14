@@ -1,8 +1,8 @@
 class OmeFiles < Formula
   desc "Open Microscopy Environment (OME) File scientific image I/O library"
   homepage "https://www.openmicroscopy.org/site/products/ome-files-cpp/"
-  url "https://downloads.openmicroscopy.org/ome-files-cpp/0.2.3/source/ome-files-cpp-0.2.3.tar.xz"
-  sha256 "01104dbe15e354649bf570ceb9e5adc29e1061eee661906dd7cd562bef86d438"
+  url "https://downloads.openmicroscopy.org/ome-files-cpp/0.3.0/source/ome-files-cpp-0.3.0.tar.xz"
+  sha256 "1fcf2b42f5da3599b1fc78a8925f0b946a0340cbed445e2d21eddbaa1211a8a5"
   head "https://github.com/ome/ome-files-cpp.git", :branch => "develop", :shallow => false
 
   bottle do
@@ -35,28 +35,28 @@ class OmeFiles < Formula
   end
 
   # Required python modules for docs
-  resource "sphinx" do
-    url "https://pypi.python.org/packages/source/S/Sphinx/Sphinx-1.2.3.tar.gz"
-    sha256 "94933b64e2fe0807da0612c574a021c0dac28c7bd3c4a23723ae5a39ea8f3d04"
+  resource "Sphinx" do
+    url "https://files.pythonhosted.org/packages/e3/87/e271f7f0d498c7fdaec009c27955401d18ef357c0d468e1eb2be36bdc68c/Sphinx-1.5.2.tar.gz"
+    sha256 "049c48393909e4704a6ed4de76fd39c8622e165414660bfb767e981e7931c722"
   end
 
   resource "docutils" do
-    url "https://pypi.python.org/packages/source/d/docutils/docutils-0.12.tar.gz"
-    sha256 "c7db717810ab6965f66c8cf0398a98c9d8df982da39b4cd7f162911eb89596fa"
+    url "https://files.pythonhosted.org/packages/05/25/7b5484aca5d46915493f1fd4ecb63c38c333bd32aa9ad6e19da8d08895ae/docutils-0.13.1.tar.gz"
+    sha256 "718c0f5fb677be0f34b781e04241c4067cbd9327b66bdd8e763201130f5175be"
   end
 
-  resource "pygments" do
-    url "https://pypi.python.org/packages/source/P/Pygments/Pygments-2.0.2.tar.gz"
-    sha256 "7320919084e6dac8f4540638a46447a3bd730fca172afc17d2c03eed22cf4f51"
+  resource "Pygments" do
+    url "https://files.pythonhosted.org/packages/71/2a/2e4e77803a8bd6408a2903340ac498cb0a2181811af7c9ec92cb70b0308a/Pygments-2.2.0.tar.gz"
+    sha256 "dbae1046def0efb574852fab9e90209b23f556367b5a320c0bcb871c77c3e8cc"
   end
 
-  resource "jinja2" do
-    url "https://pypi.python.org/packages/source/J/Jinja2/Jinja2-2.7.3.tar.gz"
-    sha256 "2e24ac5d004db5714976a04ac0e80c6df6e47e98c354cb2c0d82f8879d4f8fdb"
+  resource "Jinja2" do
+    url "https://files.pythonhosted.org/packages/71/59/d7423bd5e7ddaf3a1ce299ab4490e9044e8dfd195420fc83a24de9e60726/Jinja2-2.9.5.tar.gz"
+    sha256 "702a24d992f856fa8d5a7a36db6128198d0c21e1da34448ca236c42e92384825"
   end
 
-  resource "markupsafe" do
-    url "https://pypi.python.org/packages/source/M/MarkupSafe/MarkupSafe-0.23.tar.gz"
+  resource "MarkupSafe" do
+    url "https://files.pythonhosted.org/packages/c0/41/bae1254e0396c0cc8cf1751cb7d9afc90a602353695af5952530482c963f/MarkupSafe-0.23.tar.gz"
     sha256 "a4ec1aff59b95a14b45eb2e23761a0179e98319da5a7eb76b56ea8cdc7b871c3"
   end
 
