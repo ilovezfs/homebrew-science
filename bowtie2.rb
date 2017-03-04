@@ -1,23 +1,11 @@
 class Bowtie2 < Formula
   desc "Fast and sensitive gapped read aligner"
   homepage "https://bowtie-bio.sourceforge.io/"
+  url "https://github.com/BenLangmead/bowtie2/archive/v2.3.1.tar.gz"
+  sha256 "f44424939f4d33807bc8964a368d45a4c6d0c1ba156645146dbfe6357e39ce67"
+  head "https://github.com/BenLangmead/bowtie2.git"
   # doi "10.1038/nmeth.1923"
   # tag "bioinformatics"
-  head "https://github.com/BenLangmead/bowtie2.git"
-
-  stable do
-    url "https://github.com/BenLangmead/bowtie2/archive/v2.3.0.tar.gz"
-    sha256 "9804fddf36233f3f92c11e2250224de3395790cf35c8280c66387075df078221"
-
-    # Remove for > 2.3.0
-    # Prevents tophat test from failing
-    # Upstream commit from 7 Feb 2017 "Prevent aligner from failing when given
-    # empty FASTQ read files"
-    patch do
-      url "https://github.com/BenLangmead/bowtie2/commit/2e9b960.patch"
-      sha256 "074b07ac7b1d1a79469df30e557ea8d8739463298a66b8cee888e26dfde7e4fc"
-    end
-  end
 
   bottle do
     cellar :any
