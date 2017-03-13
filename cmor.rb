@@ -13,10 +13,10 @@ class Cmor < Formula
 
   keg_only "Conflicts with json-c in main repository."
 
+  depends_on :fortran
   depends_on "ossp-uuid"
   depends_on "udunits"
   depends_on "netcdf" => "with-fortran"
-  depends_on :fortran
 
   def install
     ENV.append "CFLAGS", "-Wno-error=unused-command-line-argument-hard-error-in-future"
