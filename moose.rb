@@ -28,7 +28,10 @@ class Moose < Formula
     end
   end
 
+  needs :cxx11
+
   def install
+    ENV.cxx11
     (buildpath/"VERSION").write("#{version}\n")
     # FindHDF5.cmake needs a little help
     ENV.prepend "LDFLAGS", "-lhdf5 -lhdf5_hl"
