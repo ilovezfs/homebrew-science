@@ -71,8 +71,6 @@ class Vtk < Formula
   end
 
   def install
-    ENV.deparallelize
-
     dylib = OS.mac? ? "dylib" : "so"
 
     args = std_cmake_args + %W[
