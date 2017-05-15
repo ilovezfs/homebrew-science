@@ -1,8 +1,8 @@
 class Adapterremoval < Formula
   desc "adapter trimming, consensus, and read merging"
   homepage "https://github.com/MikkelSchubert/adapterremoval"
-  url "https://github.com/MikkelSchubert/adapterremoval/archive/v2.2.0.tar.gz"
-  sha256 "491275d0b65cf7f44818e841d24499e897c3aaf637406144f9e6367ddd2a5177"
+  url "https://github.com/MikkelSchubert/adapterremoval/archive/v2.2.1.tar.gz"
+  sha256 "eddcb5152735be2fdfab8c2dec7e74ea229be75a3f35dab8538d378f5b6407b2"
   # doi "10.1186/s13104-016-1900-2"
   # tag "bioinformatics"
 
@@ -17,6 +17,8 @@ class Adapterremoval < Formula
   depends_on "zlib" => :recommended
 
   def install
+    inreplace "src/fastq.cc", /(#include <cmath>\n)(#include <stdexcept>)/,
+                              "\\1#include <numeric>\n\\2"
     system "make", "install", "PREFIX=#{prefix}"
   end
 
