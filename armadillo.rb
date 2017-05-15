@@ -14,22 +14,17 @@ class Armadillo < Formula
 
   option :cxx11
 
-  option "with-hdf5", "Enable the ability to save and load matrices stored in the HDF5 format"
-
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
   depends_on "arpack"
+  depends_on "hdf5"
   depends_on "superlu"
-  depends_on "hdf5" => :optional
   depends_on "openblas" if OS.linux?
 
   def install
     ENV.cxx11 if build.cxx11?
 
-    args = std_cmake_args
-    args << "-DDETECT_HDF5=ON" if build.with? "hdf5"
-
-    system "cmake", ".", *args
+    system "cmake", ".", "-DDETECT_HDF5=ON", *std_cmake_args
     system "make", "install"
 
     prefix.install "examples"
