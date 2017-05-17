@@ -1,9 +1,8 @@
 class Mathgl < Formula
   desc "Scientific graphics library"
   homepage "https://mathgl.sourceforge.io/"
-  url "https://downloads.sourceforge.net/project/mathgl/mathgl/mathgl%202.3.5/mathgl-2.3.5.1.tar.gz"
-  sha256 "77a56936f5a763fc03480c9c1fe8ed528a949b3d63b858c91abc21c731acf0db"
-  revision 2
+  url "https://downloads.sourceforge.net/project/mathgl/mathgl/2.4/mathgl-2.4.tar.gz"
+  sha256 "9f221bc5a8c411ecc06e5d9257ba2b5a59ba5798705cd3bba8d3ed845fc156d1"
 
   bottle do
     sha256 "d3d41ce4849b4ae0d430648938eaad0d202c48c062fd4b450d9364e3fa0e629e" => :sierra
