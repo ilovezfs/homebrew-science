@@ -65,9 +65,6 @@ class Getdp < Formula
       args << "-DENABLE_MPI=ON" if build.with? :mpi
     end
 
-    # Fixed test to work without access to gmsh
-    inreplace "CMakeLists.txt", "add_test(${TEST} ${TEST_BIN} ${TEST} - )", "add_test(${TEST} #{bin}/getdp ${TEST})"
-
     mkdir "build" do
       system "cmake", "..", *args
       system "make"
