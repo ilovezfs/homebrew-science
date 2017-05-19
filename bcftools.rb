@@ -20,6 +20,7 @@ class Bcftools < Formula
   depends_on "xz"
   depends_on "samtools" => :recommended
   depends_on "gsl" => :optional
+  depends_on "bzip2" unless OS.mac?
 
   def install
     args = build.with?("gsl") ? "USE_GPL=1" : []
