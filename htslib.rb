@@ -15,7 +15,10 @@ class Htslib < Formula
   end
 
   depends_on "xz"
-  depends_on "zlib" unless OS.mac?
+  unless OS.mac?
+    depends_on "bzip2"
+    depends_on "zlib"
+  end
 
   def install
     system "make", "install", "prefix=#{prefix}"
