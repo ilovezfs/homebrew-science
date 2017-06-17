@@ -1,9 +1,8 @@
 class Moose < Formula
   desc "Multiscale Object Oriented Simulation Environment"
   homepage "http://moose.ncbs.res.in"
-  url "https://github.com/BhallaLab/moose-core/archive/3.1.1.tar.gz"
-  sha256 "d86710e77973b020a6889526418128893b4173cbc665df693dfdc1e27594b90e"
-  revision 1
+  url "https://github.com/BhallaLab/moose-core/archive/3.1.2.tar.gz"
+  sha256 "a542983e4903b2b51c79f25f4acc372555cbe31bc0b9827302a6430fad466ef7"
   head "https://github.com/BhallaLab/moose-core.git"
 
   bottle do
