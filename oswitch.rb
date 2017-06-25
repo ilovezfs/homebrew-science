@@ -1,8 +1,8 @@
 class Oswitch < Formula
   desc "Docker environments to work with Bioinformatics tools"
   homepage "https://github.com/yeban/oswitch"
-  url "https://github.com/yeban/oswitch/archive/v0.2.6.tar.gz"
-  sha256 "af3ce13305be8747242dc11bdd35360b568ea738be8c490d448915d4c675871f"
+  url "https://github.com/yeban/oswitch/archive/v0.2.7.tar.gz"
+  sha256 "69090f628213fb93dccedbd8772d462fb7100c20c4495d4079d5f4d9bb84524c"
 
   bottle do
     cellar :any_skip_relocation
