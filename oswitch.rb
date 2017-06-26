@@ -11,6 +11,8 @@ class Oswitch < Formula
     sha256 "b515c7a7ca13560f075bb04559b7f8758f446de59627d3ae8f928e450e888d1d" => :mavericks
   end
 
+  depends_on :ruby => "2.0" if OS.linux?
+
   def install
     # Build gem and install to prefix.
     system "gem", "build", "oswitch.gemspec"
