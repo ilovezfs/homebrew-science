@@ -1,8 +1,8 @@
 class Osgearth < Formula
   desc "Geospatial SDK and terrain engine for OpenSceneGraph"
   homepage "http://osgearth.org"
-  url "https://github.com/gwaldron/osgearth/archive/osgearth-2.7.tar.gz"
-  sha256 "cf973b664aeb79f70e48f5cd02ba670069ec273d71fe541604ed5b328d956d83"
+  url "https://github.com/gwaldron/osgearth/archive/osgearth-2.8.tar.gz"
+  sha256 "78120338ead2976018cc877e93342403bafe1b032f2f8b7de3915ba6c5c2486a"
 
   head "https://github.com/gwaldron/osgearth.git", :branch => "master"
 
@@ -26,12 +26,12 @@ class Osgearth < Formula
   depends_on MinimumMacOSRequirement => :mavericks
 
   resource "sphinx" do
-    url "https://pypi.python.org/packages/source/S/Sphinx/Sphinx-1.2.1.tar.gz"
+    url "https://files.pythonhosted.org/packages/source/S/Sphinx/Sphinx-1.2.1.tar.gz"
     sha256 "182e5c81c3250e1752e744b6a35af4ef680bb6251276b49ef7d17f1d25e9ce70"
   end
 
   def install
-    if (build.with? "docs-examples") && (!which("sphinx-build"))
+    if build.with?("docs-examples") && !which("sphinx-build")
       # temporarily vendor a local sphinx install
       sphinx_dir = prefix/"sphinx"
       sphinx_site = sphinx_dir/"lib/python2.7/site-packages"
@@ -58,8 +58,8 @@ class Osgearth < Formula
     end
     # define libminizip paths (skips the only pkconfig dependency in cmake modules)
     mzo = Formula["minizip"].opt_prefix
-    args << "-DMINIZIP_INCLUDE_DIR=#{(build.with? "minizip") ? mzo/"include/minizip" : "''"}"
-    args << "-DMINIZIP_LIBRARY=#{(build.with? "minizip") ? mzo/"lib/libminizip.dylib" : "''"}"
+    args << "-DMINIZIP_INCLUDE_DIR=#{build.with?("minizip") ? mzo/"include/minizip" : "''"}"
+    args << "-DMINIZIP_LIBRARY=#{build.with?("minizip") ? mzo/"lib/libminizip.dylib" : "''"}"
 
     mkdir "build" do
       system "cmake", "..", *args
@@ -79,7 +79,7 @@ class Osgearth < Formula
 
   def caveats
     osg = Formula["open-scene-graph"]
-    osgver = (osg.linked_keg.exist?) ? osg.version : "#.#.# (version)"
+    osgver = osg.linked_keg.exist? ? osg.version : "#.#.# (version)"
     <<-EOS.undent
     This formula installs Open Scene Graph plugins. To ensure access when using
     the osgEarth toolset, set the OSG_LIBRARY_PATH enviroment variable to:
