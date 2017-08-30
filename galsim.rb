@@ -1,9 +1,8 @@
 class Galsim < Formula
   desc "The modular galaxy image simulation toolkit"
   homepage "https://github.com/GalSim-developers/GalSim"
-  url "https://github.com/GalSim-developers/GalSim/archive/v1.3.0.tar.gz"
-  sha256 "4afd3284adfd12845b045ea3c8e293b63057c7da57872bc9eecd005cf0a763c0"
-  revision 1
+  url "https://github.com/GalSim-developers/GalSim/archive/v1.4.4.tar.gz"
+  sha256 "f8768f3a2dfbb920254ce1125c3d28d2628a66a40a299f14b8ffe12efd0b5f21"
   head "https://github.com/GalSim-developers/GalSim.git"
 
   option "with-openmp", "Enable OpenMP multithreading"
