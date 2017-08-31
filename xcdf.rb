@@ -1,8 +1,8 @@
 class Xcdf < Formula
   desc "High performance bitpacking algorithm."
   homepage "https://github.com/jimbraun/XCDF"
-  url "https://github.com/jimbraun/XCDF/archive/v3.00.00.tar.gz"
-  sha256 "10e4173471f59e137e598b70bcc5bc02267f093e2cd15089783545869b65c538"
+  url "https://github.com/jimbraun/XCDF/archive/v3.00.01.tar.gz"
+  sha256 "fc21a8a70c4b82ac9f7c3f86fad0d694ab636b6c80945305b2ffcc7fba11cd06"
   head "https://github.com/jimbraun/XCDF.git"
 
   bottle do
