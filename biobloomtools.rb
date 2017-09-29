@@ -4,9 +4,8 @@ class Biobloomtools < Formula
   # doi "10.1093/bioinformatics/btu558"
   # tag "bioinformatics"
 
-  url "https://github.com/bcgsc/biobloom/releases/download/2.0.13/biobloomtools-2.0.13.tar.gz"
-  sha256 "7b4aeef70feb3fc31db2f4695159523272eadd8787b33c2902e2970a7d569ba3"
-  revision 1
+  url "https://github.com/bcgsc/biobloom/releases/download/2.1.0/biobloomtools-2.1.0.tar.gz"
+  sha256 "8118db39cfa0360ad7036d14919ddcffa2f1bc8bcbe51c0899bcd198048af47b"
 
   bottle do
     cellar :any
