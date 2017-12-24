@@ -1,8 +1,8 @@
 class Spades < Formula
   desc "SPAdes: de novo genome assembly"
   homepage "http://bioinf.spbau.ru/spades/"
-  url "http://cab.spbu.ru/files/release3.11.0/SPAdes-3.11.0.tar.gz"
-  sha256 "308aa3e6c5fb00221a311a8d32c5e8030990356ae03002351eac10abb66bad1f"
+  url "http://cab.spbu.ru/files/release3.11.1/SPAdes-3.11.1.tar.gz"
+  sha256 "3ab85d86bf7d595bd8adf11c971f5d258bbbd2574b7c1703b16d6639a725b474"
   # doi "10.1089/cmb.2012.0021"
   # tag "bioinformatics"
 
@@ -24,9 +24,6 @@ class Spades < Formula
   end
 
   def install
-    # Fix error: 'uint' does not name a type
-    inreplace "src/projects/ionhammer/config_struct.hpp", "uint", "unsigned"
-
     mkdir "src/build" do
       system "cmake", "..", *std_cmake_args
       system "make", "install"
