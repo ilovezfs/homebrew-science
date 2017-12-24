@@ -1,8 +1,8 @@
 class Opencollada < Formula
   desc "Stream based reader and writer library for COLLADA files"
   homepage "http://www.opencollada.org"
-  url "https://github.com/KhronosGroup/OpenCOLLADA/archive/v1.6.59.tar.gz"
-  sha256 "638ce67a3f8fe0ce99b69ba143f1ecf80813b41ed09438cfbb07aa913f1b89d7"
+  url "https://github.com/KhronosGroup/OpenCOLLADA/archive/v1.6.61.tar.gz"
+  sha256 "c0b19d315bf7eaed5f29636ddd962ee7d3c2f7067039dba124bf9f0c94aa9e1e"
 
   bottle do
     cellar :any_skip_relocation
