@@ -19,7 +19,6 @@ class Kraken < Formula
 
   def install
     libexec.mkdir
-    inreplace "install_kraken.sh", "[ -x \"$file\" ] && echo \"  $file\"", "if [ -x \"$file\" ]; then echo \"  $file\"; fi"
     system "./install_kraken.sh", libexec
     libexec_bins = ["kraken", "kraken-build", "kraken-filter", "kraken-mpa-report", "kraken-report", "kraken-translate"].map { |x| libexec + x }
     bin.install_symlink(libexec_bins)
