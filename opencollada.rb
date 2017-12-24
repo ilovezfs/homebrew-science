@@ -19,6 +19,8 @@ class Opencollada < Formula
   end
 
   def install
+    ENV["SDKROOT"] = MacOS.sdk_path
+
     mkdir "build" do
       system "cmake", "..", *std_cmake_args
       system "make", "install"
