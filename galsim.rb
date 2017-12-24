@@ -1,12 +1,9 @@
 class Galsim < Formula
   desc "The modular galaxy image simulation toolkit"
   homepage "https://github.com/GalSim-developers/GalSim"
-  url "https://github.com/GalSim-developers/GalSim/archive/v1.3.0.tar.gz"
-  sha256 "4afd3284adfd12845b045ea3c8e293b63057c7da57872bc9eecd005cf0a763c0"
-  revision 2
+  url "https://github.com/GalSim-developers/GalSim/archive/v1.5.1.tar.gz"
+  sha256 "63e0fc7735a3a496bd8c226aaa50a60d865e49a0ec04b2c64f8de4c7b887f352"
   head "https://github.com/GalSim-developers/GalSim.git"
-
-  bottle :disable, "needs to be rebuilt with latest boost"
 
   option "with-openmp", "Enable OpenMP multithreading"
   option "without-test", "Skip build-time tests (not recommended)"
