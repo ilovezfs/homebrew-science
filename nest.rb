@@ -20,8 +20,7 @@ class Nest < Formula
   depends_on "gsl" => :recommended
   depends_on :mpi => [:optional, :cc, :cxx]
 
-  # Any Python >= 2.7 < 3.x is okay (either from macOS or brewed)
-  depends_on :python unless OS.mac?
+  depends_on :python
   depends_on :python3 => :optional
 
   requires_py3 = []
@@ -110,6 +109,8 @@ class Nest < Formula
   end
 
   test do
+    ENV.prepend_path "PATH", Formula["python"].opt_libexec/"bin"
+
     # simple check whether NEST was compiled & linked
     system bin/"nest", "--version"
 
