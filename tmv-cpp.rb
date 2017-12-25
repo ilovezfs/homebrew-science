@@ -38,11 +38,6 @@ class TmvCpp < Formula
     scons "examples"
     scons "install"
 
-    # dylibs don't have the correct install name.
-    %w[libtmv.0.dylib libtmv_symband.0.dylib].each do |libname|
-      system "install_name_tool", "-id", "#{lib}/#{libname}", "#{lib}/#{libname}"
-    end
-
     (pkgshare/"tests").install Dir["test/tmvtest*"] if build.with? "test"
     (pkgshare/"examples").install Dir["examples/*[^\.o]"]
   end
