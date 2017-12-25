@@ -21,12 +21,6 @@ class XmiMsim < Formula
   depends_on "hdf5"
   depends_on "xraylib"
 
-  # add support for HDF5 1.10.0
-  patch do
-    url "https://github.com/tschoonj/xmimsim/commit/1459971313ea4a3cbbfdc87332b91dfcdfc0f3d7.diff"
-    sha256 "d5d435a420b0b089f103173a143ad6e94718967257fe835f8cecd32ff19c2bb4"
-  end
-
   def install
     ENV.deparallelize # fortran modules don't like parallel builds
 
