@@ -23,7 +23,7 @@ class Opencollada < Formula
 
     mkdir "build" do
       system "cmake", "..", *std_cmake_args
-      system "xcrun", "make", "install"
+      system "make", "install"
       prefix.install "bin"
       Dir.glob("#{bin}/*.xsd") { |p| rm p }
     end
