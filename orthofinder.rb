@@ -11,9 +11,9 @@ class Orthofinder < Formula
 
   depends_on "blast"
   depends_on "mcl"
+  depends_on "scipy"
   depends_on "fasttree" => :recommended
   depends_on "mafft" => :recommended
-  depends_on "scipy" => :python
 
   def install
     pkgshare.install "orthofinder/ExampleDataset"
