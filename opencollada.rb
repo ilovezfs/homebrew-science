@@ -18,12 +18,16 @@ class Opencollada < Formula
     depends_on "pcre"
   end
 
+  needs :cxx11
+
   def install
+    ENV.cxx11
     ENV["SDKROOT"] = MacOS.sdk_path
+    ENV["MACOSX_DEPLOYMENT_TARGET"] = MacOS.version
 
     mkdir "build" do
       system "cmake", "..", *std_cmake_args
-      system "make", "install"
+      system "xcrun", "make", "install"
       prefix.install "bin"
       Dir.glob("#{bin}/*.xsd") { |p| rm p }
     end
