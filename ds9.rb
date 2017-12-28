@@ -1,10 +1,9 @@
 class Ds9 < Formula
   desc "Astronomical imaging and data visualization"
   homepage "http://ds9.si.edu/"
-  url "http://ds9.si.edu/archive/source/ds9.7.3.2.tar.gz"
-  version "7.3.2"
-  sha256 "05d581780f41d02799777c5a2095ea6e74dc70bd80175c96babe241c23d0145f"
-  revision 1
+  url "http://ds9.si.edu/download/source/ds9.7.5.tar.gz"
+  version "7.5"
+  sha256 "8ae0876472aea2d1d616595f7efcedc4ad8f5edd249721b1e4929fe317ddee3e"
 
   bottle do
     cellar :any_skip_relocation
