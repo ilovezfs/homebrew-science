@@ -1,9 +1,8 @@
 class Coinmp < Formula
   desc "C-API library for the CLP, CBC and CGL projects"
   homepage "https://projects.coin-or.org/CoinMP"
-  url "https://www.coin-or.org/download/source/CoinMP/CoinMP-1.7.3.tgz"
-  sha256 "45c349e297edfa951458f37800ba16aa451aff86fea2de2923e15723b3909f90"
-  revision 2
+  url "https://www.coin-or.org/download/source/CoinMP/CoinMP-1.8.3.tgz"
+  sha256 "a1a665db36c7fd69c1e53fffbd108cae1bf22f08acf81c394cd454b8168f22f7"
   head "https://projects.coin-or.org/svn/CoinMP/trunk", :using => :svn
 
   bottle do
