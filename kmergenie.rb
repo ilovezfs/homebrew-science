@@ -4,9 +4,8 @@ class Kmergenie < Formula
   # doi "10.1093/bioinformatics/btt310"
   # tag "bioinformatics"
 
-  url "http://kmergenie.bx.psu.edu/kmergenie-1.6976.tar.gz"
-  sha256 "319db3dab3837347d710088ec203673e14b6751fa10d193f9ecf3afbc06e9d1e"
-  revision 1
+  url "http://kmergenie.bx.psu.edu/kmergenie-1.7044.tar.gz"
+  sha256 "46f2a08a2d7b1885414143e436829dd7e61fcc31ec4e429433e516a168d2978e"
 
   bottle do
     cellar :any_skip_relocation
@@ -18,7 +17,10 @@ class Kmergenie < Formula
 
   option "with-maxkmer=", "Specify maximum supported k-mer length (default: 121)"
 
+  depends_on "gcc" if OS.mac?
   depends_on "r"
+
+  needs :openmp
 
   def install
     ENV.deparallelize
