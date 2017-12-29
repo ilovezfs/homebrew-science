@@ -1,7 +1,7 @@
 class Nusmv < Formula
   homepage "http://nusmv.fbk.eu/"
-  url "http://nusmv.fbk.eu/distrib/NuSMV-2.5.4.tar.gz"
-  sha256 "3c250624cba801b1f62f50733f9507b0f3b3ca557ce1cd65956178eb273f1bdf"
+  url "http://nusmv.fbk.eu/distrib/NuSMV-2.6.0.tar.gz"
+  sha256 "dba953ed6e69965a68cd4992f9cdac6c449a3d15bf60d200f704d3a02e4bbcbb"
 
   depends_on "wget"
 
