@@ -1,8 +1,8 @@
 class SuperluMt < Formula
   desc "Multithreaded solution of large, sparse nonsymmetric systems"
   homepage "http://crd-legacy.lbl.gov/~xiaoye/SuperLU"
-  url "http://crd-legacy.lbl.gov/~xiaoye/SuperLU/superlu_mt_3.0.tar.gz"
-  sha256 "e5750982dc83ac62f4da31f24638aa62dbfe3ff00f9b8b786ad2eed5f9cabf56"
+  url "http://crd-legacy.lbl.gov/~xiaoye/SuperLU/superlu_mt_3.1.tar.gz"
+  sha256 "407b544b9a92b2ed536b1e713e80f986824cf3016657a4bfc2f3e7d2a76ecab6"
 
   bottle do
     cellar :any_skip_relocation
