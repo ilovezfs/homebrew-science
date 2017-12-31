@@ -1,8 +1,8 @@
 class UcscGenomeBrowser < Formula
   desc "Mirror of the UCSC Genome Browser"
   homepage "https://genome.ucsc.edu/"
-  url "http://hgdownload.cse.ucsc.edu/admin/jksrc.v338.zip"
-  sha256 "760972f8f8b6f5a2ac62c1a563a9235b3844c040757d8c51d793962224afa239"
+  url "http://hgdownload.cse.ucsc.edu/admin/jksrc.v358.zip"
+  sha256 "7e2bf890d77306b59d7211631eb2ae672dff024ef6816a817d19f3bd1a837f6a"
   head "git://genome-source.cse.ucsc.edu/kent.git"
   # doi "10.1093/nar/gkq963"
   # tag "bioinformatics"
