@@ -14,9 +14,6 @@ class Prooftree < Formula
   depends_on "lablgtk"
   depends_on "ocaml" => :build
 
-  # Fixes the compilation with OCaml 4.02.x+; reported upstream on 2015/11/18
-  patch :DATA
-
   def install
     system "./configure", "--prefix", prefix
     system "make"
@@ -27,60 +24,3 @@ class Prooftree < Formula
     system "#{bin}/prooftree", "--help"
   end
 end
-
-__END__
-diff --git a/input.ml b/input.ml
-index 934943c..aeee520 100644
---- a/input.ml
-+++ b/input.ml
-@@ -27,7 +27,7 @@
-
- (*****************************************************************************
-  *****************************************************************************)
--(** {2 Communition Protocol with Proof General}
-+(**{| {2 Communition Protocol with Proof General}
-
-     The communication protocol with Proof General is almost one-way
-     only: Proof General sends display messages to Prooftree and
-@@ -207,7 +207,7 @@
-     }
-     }
-     }
--*)
-+|}*)
-
- (** Version number of the communication protocol described and
-     implemented by this module.
-@@ -438,7 +438,7 @@ let parse_configure com_buf =
-   Scanf.bscanf com_buf
-     " for \"%s@\" and protocol version %d" configure_prooftree
-
--(******************************************************************************
-+(*{|***************************************************************************
-  ******************************************************************************
-  * current-goals state %d current-sequent %s {cheated|not-cheated} \
-  * {new-layer|current-layer}
-@@ -449,7 +449,7 @@ let parse_configure com_buf =
-  * <data-current-sequent>\n\
-  * <data-additional-ids>\n\
-  * <data-existentials>\n
-- *)
-+ |}*)
-
- (** {3 Current-goals command parser} *)
-
-@@ -624,13 +624,13 @@ let parse_switch_goal com_buf =
-
-
-
--(******************************************************************************
-+(*{|***************************************************************************
-  * branch-finished state %d {cheated|not-cheated} \
-  * proof-name-bytes %d command-bytes %d existential-bytes %d\n\
-  * <data-proof-name>\n\
-  * <data-command>\n\
-  * <data-existentials>\n
--*)
-+ |}*)
-
- (** {3 Branch-finished command parser} *)
