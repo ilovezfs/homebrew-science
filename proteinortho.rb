@@ -4,9 +4,9 @@ class Proteinortho < Formula
   # doi "10.1186/1471-2105-12-124"
   # tag "bioinformatics"
 
-  url "http://www.bioinf.uni-leipzig.de/Software/proteinortho/proteinortho_v5.15_src.tar.gz"
-  version "5.15"
-  sha256 "718af74289a4fc0075f9dce2b12fe3fa1c7d96718c7ec8d9ddca94beac658a17"
+  url "http://www.bioinf.uni-leipzig.de/Software/proteinortho/proteinortho_v5.16b_src.tar.gz"
+  version "5.16b"
+  sha256 "d220d4af5ffae8190eec462d8b6c941022ce2927391493b7741c6b7db96a80f2"
 
   bottle do
     cellar :any_skip_relocation
