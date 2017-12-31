@@ -1,8 +1,8 @@
 class Prooftree < Formula
   desc "Proof tree visualization program"
   homepage "https://askra.de/software/prooftree"
-  url "https://askra.de/software/prooftree/releases/prooftree-0.12.tar.gz"
-  sha256 "952ca2efec290808ffac093abe7ac9b10ae471f5d8cd9ef66db3dd02a431d723"
+  url "https://askra.de/software/prooftree/releases/prooftree-0.13.tar.gz"
+  sha256 "b08949a7f6a1ea04f4f76c53f24c151ea803fc7309d525e0bcf771bc30273f7c"
 
   bottle do
     cellar :any
